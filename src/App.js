@@ -6,6 +6,7 @@ const App = () => {
       <h1>Hello ReactJS!</h1>
       <p>Test Commit 1</p>
       <p>Test Commit 2</p>
+      <p>Test Commit 3</p>
     </div>
   )
 }
