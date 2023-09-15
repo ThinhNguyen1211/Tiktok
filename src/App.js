@@ -1,24 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/layout';
+import { DefaultLayout } from '~/components/Layouts';
 import { Fragment } from 'react';
 
 const App = () => {
     return (
         <Router>
-            <Link to="/" style={{ padding: '10px' }}>
-                Home
-            </Link>
-            <Link to="/following" style={{ padding: '10px' }}>
-                Following
-            </Link>
-            <Link to="/profile" style={{ padding: '10px' }}>
-                Profile
-            </Link>
-            <Link to="/upload" style={{ padding: '10px' }}>
-                Upload
-            </Link>
-            <div style={{ padding: '32px' }}>
+            <div>
                 <Routes>
                     {publicRoutes.map((route, i) => {
                         let Layout = DefaultLayout;
@@ -43,6 +31,15 @@ const App = () => {
                         );
                     })}
                 </Routes>
+                <Link to="/" style={{ padding: '10px' }}>
+                    Home
+                </Link>
+                <Link to="/following" style={{ padding: '10px' }}>
+                    Following
+                </Link>
+                <Link to="/profile" style={{ padding: '10px' }}>
+                    Profile
+                </Link>
             </div>
         </Router>
     );
