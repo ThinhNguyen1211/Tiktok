@@ -9,4 +9,20 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.loading {
+    display: none;
+}
+
+.clear {
+    display: none;
 }
