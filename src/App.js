@@ -31,15 +31,6 @@ const App = () => {
                         );
                     })}
                 </Routes>
-                <Link to="/" style={{ padding: '10px' }}>
-                    Home
-                </Link>
-                <Link to="/following" style={{ padding: '10px' }}>
-                    Following
-                </Link>
-                <Link to="/profile" style={{ padding: '10px' }}>
-                    Profile
-                </Link>
             </div>
         </Router>
     );

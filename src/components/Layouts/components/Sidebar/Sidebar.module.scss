@@ -1,3 +1,144 @@
 .wrapper {
-    width: 356px;
+    max-width: 232px;
+    padding: 20px 0 26px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding-left: 8px;
+}
+
+.nav-direct {
+    padding: 0;
+    margin-bottom: 8px;
+    list-style-type: none;
+}
+
+.home,
+.following,
+.explore,
+.live {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    cursor: pointer;
+
+    a {
+        color: var(--black-color);
+        font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: 24px;
+        margin-left: 8px;
+        text-decoration: none;
+    }
+}
+
+.home-icon,
+.follow-icon,
+.explore-icon,
+.live-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.login-suggested {
+    position: relative;
+    padding: 20px 8px 24px 8px;
+    margin-bottom: 29.4px;
+}
+
+.login-suggested::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    left: 8px;
+    right: 8px;
+    background: rgba(22, 24, 35, 0.2);
+    transform: scaleY(0.5);
+    top: 0;
+}
+
+.paragraph {
+    color: rgba(22, 24, 35, 0.5);
+    font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+    font-size: 1.6rem;
+    line-height: 21px;
+}
+
+.login-btn {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 1);
+    min-width: 168px;
+    min-height: 48px;
+    font-size: 1.8rem;
+    line-height: 25px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 6px 8px;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.policy {
+    position: relative;
+    padding-top: 16px;
+    padding-left: 8px;
+    line-height: 22px;
+
+    div {
+        margin-bottom: 8px;
+    }
+
+    a {
+        color: rgba(22, 24, 35, 0.5);
+        font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        display: inline-block;
+        margin-right: 6px;
+        margin-top: 5px;
+        text-decoration: none;
+    }
+
+    span {
+        color: rgba(22, 24, 35, 0.5);
+        font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        display: inline-block;
+        margin-right: 6px;
+        margin-top: 5px;
+    }
+}
+
+.policy::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.2);
+    transform: scaleY(0.5);
+}
+
+.more-policy {
+    cursor: pointer;
 }
