@@ -48,6 +48,14 @@
     &:hover .search-btn {
         background: #0000000b;
     }
+
+    &:hover .search-icon {
+        display: none;
+    }
+
+    &:hover .search--active-icon {
+        display: block;
+    }
 }
 
 .search-border {
@@ -76,6 +84,10 @@
     appearance: textfield;
 }
 
+.search--active-icon {
+    display: none;
+}
+
 .clear-btn {
     display: none;
 }
@@ -99,6 +111,11 @@
 .actions-container {
     display: flex;
     align-items: center;
+
+    a {
+        text-decoration: none;
+        color: unset;
+    }
 }
 
 .upload {
@@ -164,6 +181,99 @@
     margin-left: 12px;
     cursor: pointer;
     user-select: none;
+    z-index: 1;
+
+    &:hover .device-download {
+        display: block;
+        animation: showUp 0.2s;
+    }
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.device-download {
+    cursor: default;
+    display: none;
+    position: absolute;
+    top: 125%;
+    right: -45px;
+    width: 228px;
+    background: #fff;
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+}
+
+.download-wrapper {
+    margin-top: 5px;
+    padding: 16px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    button {
+        width: 100%;
+        padding: 12px 8px;
+        color: rgba(255, 255, 255, 1);
+        background-color: var(--primary-color);
+        border-radius: 2px;
+        border: none;
+        user-select: none;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 21px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -40px;
+        height: 60px;
+        background: transparent;
+        transform: scaleY(0.5);
+    }
+}
+
+.download-image {
+    width: 140px;
+}
+
+.download-header {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px;
+}
+
+.download-on {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(22, 24, 35, 0.3);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 12px;
+}
+
+.right-arrow {
+    opacity: 0.5;
+    width: 13px;
+    height: 13px;
 }
 
 .menu {
@@ -173,10 +283,97 @@
     font-style: normal;
     padding: 0 4px;
     user-select: none;
+
+    &:hover .menu-settings {
+        display: block;
+        animation: showUp 0.2s;
+    }
 }
 
 .menu-icon {
     width: 20px;
     height: 20px;
     display: block;
+}
+
+.menu-settings {
+    display: none;
+    position: absolute;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    width: 270px;
+    top: 155%;
+    right: -10px;
+    background: #fff;
+    box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+
+    ul {
+        list-style-type: none;
+        padding: 8px 0;
+
+        li:last-child {
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                div {
+                    padding: 0;
+                    margin-right: 8px;
+
+                    button {
+                        position: relative;
+                        background: rgba(0, 0, 0, 0.1);
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        width: 44px;
+                        height: 24px;
+                        border-radius: 12px;
+
+                        span {
+                            position: absolute;
+                            height: 20px;
+                            width: 20px;
+                            background: #fff;
+                            border-radius: 50%;
+                            padding: 2px;
+                            margin-left: 2px;
+                            transition: transform 0.2s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        padding: 8px 2px 8px 16px;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.03);
+        }
+    }
+
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 0;
+        top: -30px;
+        height: 60px;
+        background: transparent;
+        transform: scaleY(0.5);
+    }
 }

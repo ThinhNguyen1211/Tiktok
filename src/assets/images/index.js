@@ -1,6 +1,8 @@
 const Image = {
     tiktokLogo: require('~/assets/images/tiktokLogo.svg').default,
+    tiktokDesktop: require('~/assets/images/tiktokDesktop.png'),
     searchIcon: require('~/assets/images/Icons/searchIcon.svg').default,
+    searchBlackIcon: require('~/assets/images/Icons/searchBlackIcon.svg').default,
     plusIcon: require('~/assets/images/Icons/plusIcon.svg').default,
     deviceChangedIcon: require('~/assets/images/Icons/deviceChangedIcon.svg').default,
     menuIcon: require('~/assets/images/Icons/menuIcon.svg').default,
@@ -19,6 +21,7 @@ const Image = {
     shareIcon: require('~/assets/images/Icons/shareIcon.svg').default,
     clearIcon: require('~/assets/images/Icons/clearIcon.svg').default,
     loadingIcon: require('~/assets/images/Icons/loadingIcon.svg').default,
+    rightArrowIcon: require('~/assets/images/Icons/rightArrowIcon.svg').default,
 };
 
 export default Image;
