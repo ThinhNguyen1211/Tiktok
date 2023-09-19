@@ -5,6 +5,9 @@ import images from '~/assets/images';
 
 const cx = classNames.bind(Styles);
 
+//TODO: làm nút tạo hiệu ứng
+//TODO: làm cơ chế active khi đang ở tab ...
+
 function Sidebar() {
     return (
         <aside className={cx('wrapper')}>
@@ -55,6 +58,9 @@ function Sidebar() {
                 </div>
                 <div>
                     <span className={cx('more-policy')}>Thêm</span>
+                    <div className={cx('policy-execute-wrapper')}>
+                        <span className={cx('policy-execute')}>NGUYÊN TẮC THỰC THI PHÁP LUẬT CỦA TIKTOK</span>
+                    </div>
                 </div>
                 <span>
                     ©TikTok clone by <a href="https://www.facebook.com/profile.php?id=100007758302640">Thinh Nguyen</a>

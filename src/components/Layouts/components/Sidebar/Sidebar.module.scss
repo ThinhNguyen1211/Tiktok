@@ -1,17 +1,30 @@
 .wrapper {
-    max-width: 232px;
-    padding: 20px 0 26px;
+    position: fixed;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
+    overflow: scroll;
+    overflow-x: auto;
+    padding: 20px 0 26px;
+    max-width: 236px;
     min-height: 100%;
-    padding-left: 8px;
+    &::-webkit-scrollbar {
+        width: 6px;
+        background: rgba(0, 0, 0, 0.05);
+    }
 }
 
 .nav-direct {
     padding: 0;
     margin-bottom: 8px;
     list-style-type: none;
+
+    li {
+        &:hover {
+            background: #0000000b;
+        }
+    }
 }
 
 .home,
@@ -22,7 +35,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 8px;
+    padding: 8px 8px 8px 16px;
     box-sizing: border-box;
     border-radius: 4px;
     cursor: pointer;
@@ -48,7 +61,7 @@
 
 .login-suggested {
     position: relative;
-    padding: 20px 8px 24px 8px;
+    padding: 20px 8px 24px 16px;
     margin-bottom: 29.4px;
 }
 
@@ -92,16 +105,70 @@
     box-sizing: border-box;
     margin-top: 20px;
     width: 100%;
+
+    &:hover {
+        background: rgba(255, 0, 0, 0.04);
+    }
 }
 
 .policy {
     position: relative;
     padding-top: 16px;
-    padding-left: 8px;
+    padding-left: 16px;
     line-height: 22px;
 
     div {
         margin-bottom: 8px;
+        position: relative;
+
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .policy-execute-wrapper {
+            display: none;
+            position: absolute;
+            max-width: 200px;
+            bottom: 90%;
+            padding-right: 8px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -30px;
+                height: 60px;
+                background: transparent;
+                transform: scaleY(0.5);
+                z-index: 2;
+            }
+        }
+
+        .policy-execute {
+            background: #fff;
+            cursor: pointer;
+            font-style: normal;
+            margin: 0;
+            padding: 15px 16px 18px;
+            width: fit-content;
+            box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            animation: showUp 0.2s;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+
+        &:hover .policy-execute-wrapper {
+            display: block;
+        }
     }
 
     a {
@@ -127,6 +194,15 @@
         margin-top: 5px;
     }
 
+    span:last-child {
+        a {
+            &:hover {
+                color: var(--primary-color);
+                text-decoration: underline;
+            }
+        }
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -136,6 +212,15 @@
         height: 1px;
         background: rgba(22, 24, 35, 0.2);
         transform: scaleY(0.5);
+    }
+}
+
+@keyframes showUp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 

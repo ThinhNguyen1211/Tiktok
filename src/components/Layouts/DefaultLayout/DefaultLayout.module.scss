@@ -5,10 +5,14 @@
 }
 
 .container {
+    margin-top: 60px;
     width: 100%;
     display: flex;
+    z-index: 1;
 }
 
 .content {
+    margin-left: 236px;
     flex: 1;
+    height: 2000px;
 }
