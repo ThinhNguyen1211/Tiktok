@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
     --primary-color: #fe2c55;
@@ -27,7 +27,7 @@ body {
     text-rendering: optimizeSpeed;
 }
 ::-webkit-scrollbar {
-    width: 0.5em;
+    width: 0.000001em;
 }
 
 /* Màu nền của thanh cuộn */
@@ -50,4 +50,10 @@ body {
     height: 28px;
     margin: -3px 0;
     background: rgba(22, 24, 35, 0.12);
+}
+
+.active {
+    a {
+        color: var(--primary-color) !important;
+    }
 }

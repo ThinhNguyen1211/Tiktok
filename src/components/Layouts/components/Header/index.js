@@ -1,6 +1,10 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
+import LoginModal from '../LoginModal';
+import DownloadModal from '../DownloadModal';
+import LanguageModal from '../LanguageModal';
+import ShortcutModal from '../ShortcutModal';
 
 const cx = classNames.bind(styles);
 let isSwitched = false;
@@ -14,6 +18,37 @@ const handleSwitch = () => {
     switchProp.style.transform = transformValue;
     isSwitched ? (switchBtn.style.background = 'rgb(79 254 168)') : (switchBtn.style.background = 'rgba(0, 0, 0, 0.1)');
 };
+
+const handleShowLoginModal = () => {
+    const loginModal = document.querySelector('.LoginModal_wrapper__3fnKg');
+    loginModal.style.opacity = 1;
+    loginModal.style.visibility = 'visible';
+};
+
+const handleShowDownloadModal = () => {
+    const downloadModal = document.querySelector('.DownloadModal_wrapper__sdzBE');
+    downloadModal.style.opacity = 1;
+    downloadModal.style.visibility = 'visible';
+};
+
+const handleShowLanguageModal = () => {
+    const languageModal = document.querySelector('.LanguageModal_wrapper__Zw4ec');
+    languageModal.style.opacity = 1;
+    languageModal.style.visibility = 'visible';
+    languageModal.style.display = 'block';
+    setTimeout(() => {
+        languageModal.style.opacity = 0;
+        languageModal.style.visibility = 'hidden';
+    }, 1200);
+};
+
+const handleShowShortcutModal = () => {
+    const shortcutModal = document.querySelector('.ShortcutModal_wrapper__2DEeh');
+    shortcutModal.style.opacity = 1;
+    shortcutModal.style.visibility = 'visible';
+};
+
+//TODO: night-mode
 
 function Header() {
     return (
@@ -38,21 +73,25 @@ function Header() {
                     <div className={cx('search-border')}></div>
                 </div>
                 <div className={cx('actions-container')}>
-                    <a href="/">
+                    <div className={cx('upload-link')} onClick={() => handleShowLoginModal()}>
                         <div className={cx('upload')}>
                             <img src={images.plusIcon} alt="plus icon" className={cx('upload-icon')} />
                             <span className={cx('upload-text')}>Tải lên</span>
                         </div>
-                    </a>
-                    <button className={cx('login-btn')}>Đăng nhập</button>
+                    </div>
+                    <button className={cx('login-btn')} onClick={() => handleShowLoginModal()}>
+                        Đăng nhập
+                    </button>
                     <div className={cx('device-changed')}>
                         <img src={images.deviceChangedIcon} alt="Device changed icon" />
                         <div className={cx('device-download')}>
                             <div className={cx('download-wrapper')}>
                                 <img src={images.tiktokDesktop} alt="tiktok desktop" className={cx('download-image')} />
                                 <p className={cx('download-header')}>Ứng dụng TikTok cho máy tính</p>
-                                <button className={cx('download-btn')}>Tải về</button>
-                                <div className={cx('download-on')}>
+                                <button className={cx('download-btn')} onClick={() => handleShowDownloadModal()}>
+                                    Tải về
+                                </button>
+                                <div className={cx('download-on')} onClick={() => handleShowDownloadModal()}>
                                     <p className={cx('download-paragraph')}>Thay vào đó, tải ứng dụng di động về</p>
                                     <img src={images.rightArrowIcon} alt="right arrow" className={cx('right-arrow')} />
                                 </div>
@@ -66,11 +105,13 @@ function Header() {
                                 <li>
                                     <div>
                                         <img src={images.creativeBulbIcon} alt="creative bulb" />
-                                        <p>Trung tâm nhà sáng tạo LIVE</p>
+                                        <a href="https://www.tiktok.com/live/creators/vi-VN/?enter_from=more&lang=vi-VN&region=VN">
+                                            Trung tâm nhà sáng tạo LIVE
+                                        </a>
                                     </div>
                                 </li>
                                 <li>
-                                    <div>
+                                    <div className={cx('language-selected')} onClick={() => handleShowLanguageModal()}>
                                         <img src={images.languagesSelectIcon} alt="languages select" />
                                         <p>Tiếng Việt</p>
                                     </div>
@@ -78,11 +119,11 @@ function Header() {
                                 <li>
                                     <div>
                                         <img src={images.helpIcon} alt="help icon" />
-                                        <p>Phản hồi và trợ giúp</p>
+                                        <a href="https://www.tiktok.com/feedback">Phản hồi và trợ giúp</a>
                                     </div>
                                 </li>
                                 <li>
-                                    <div>
+                                    <div className={cx('keyboard-shortcut')} onClick={() => handleShowShortcutModal()}>
                                         <img src={images.keyboardIcon} alt="keyboard icon" />
                                         <p>Phím tắt trên bàn phím</p>
                                     </div>
@@ -107,6 +148,10 @@ function Header() {
                     </div>
                 </div>
             </div>
+            <LoginModal />
+            <DownloadModal />
+            <LanguageModal />
+            <ShortcutModal />
         </header>
     );
 }

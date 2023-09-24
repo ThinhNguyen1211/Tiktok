@@ -1,14 +1,19 @@
 .wrapper {
-    position: fixed;
+    position: sticky;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     scroll-behavior: smooth;
     overflow: scroll;
     overflow-x: auto;
+    user-select: none;
     padding: 20px 0 26px;
+    max-height: 730px;
     max-width: 236px;
     min-height: 100%;
+    top: 60px;
+    left: 0;
+
     &::-webkit-scrollbar {
         width: 6px;
         background: rgba(0, 0, 0, 0.05);
@@ -16,9 +21,9 @@
 }
 
 .nav-direct {
+    list-style-type: none;
     padding: 0;
     margin-bottom: 8px;
-    list-style-type: none;
 
     li {
         &:hover {
@@ -35,19 +40,22 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 8px 8px 8px 16px;
     box-sizing: border-box;
-    border-radius: 4px;
     cursor: pointer;
+    border-radius: 4px;
 
     a {
-        color: var(--black-color);
         font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--black-color);
+        padding-left: 16px;
         font-weight: 700;
         font-size: 1.8rem;
         line-height: 24px;
-        margin-left: 8px;
-        text-decoration: none;
+        width: 100%;
+        height: 48px;
     }
 }
 
@@ -57,12 +65,12 @@
 .live-icon {
     width: 32px;
     height: 32px;
+    margin-right: 8px;
 }
 
 .login-suggested {
     position: relative;
     padding: 20px 8px 24px 16px;
-    margin-bottom: 29.4px;
 }
 
 .login-suggested::before {
@@ -84,8 +92,16 @@
 }
 
 .login-btn {
-    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
     border-style: solid;
+    height: 52px;
+    border-width: 1px;
     border-radius: 4px;
     color: var(--primary-color);
     border-color: var(--primary-color);
@@ -94,15 +110,8 @@
     min-height: 48px;
     font-size: 1.8rem;
     line-height: 25px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    font-weight: 600;
     padding: 6px 8px;
-    user-select: none;
-    cursor: pointer;
-    box-sizing: border-box;
     margin-top: 20px;
     width: 100%;
 
@@ -117,9 +126,63 @@
     padding-left: 16px;
     line-height: 22px;
 
-    div {
-        margin-bottom: 8px;
+    .effect-btn {
+        text-align: center;
         position: relative;
+        padding-right: 8px;
+        margin-bottom: 30px;
+        border-radius: 4px;
+
+        .effect-background {
+            position: relative;
+            max-width: 206.4px;
+            height: 52px;
+            border-radius: 8px;
+        }
+
+        .effect-link {
+            margin: 0;
+        }
+
+        div {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            max-width: 200px;
+            top: 16px;
+            left: 40px;
+            transform: scale(1);
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            svg {
+                width: 19px;
+                height: 19px;
+                margin-right: 9px;
+                margin-top: 2px;
+            }
+
+            h4 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+                color: rgba(22, 24, 35, 1);
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+    }
+
+    div {
+        position: relative;
+        margin-bottom: 8px;
 
         a {
             &:hover {
@@ -137,11 +200,11 @@
             &::after {
                 content: '';
                 position: absolute;
+                background: transparent;
                 left: 0;
                 right: 0;
                 bottom: -30px;
                 height: 60px;
-                background: transparent;
                 transform: scaleY(0.5);
                 z-index: 2;
             }
@@ -151,9 +214,9 @@
             background: #fff;
             cursor: pointer;
             font-style: normal;
+            width: fit-content;
             margin: 0;
             padding: 15px 16px 18px;
-            width: fit-content;
             box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.15);
             border-radius: 8px;
             font-weight: 600;
@@ -172,24 +235,24 @@
     }
 
     a {
-        color: rgba(22, 24, 35, 0.5);
+        text-decoration: none;
+        display: inline-block;
         font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+        color: rgba(22, 24, 35, 0.5);
         font-weight: 600;
         font-size: 12px;
         line-height: 16px;
-        display: inline-block;
         margin-right: 6px;
         margin-top: 5px;
-        text-decoration: none;
     }
 
     span {
-        color: rgba(22, 24, 35, 0.5);
+        display: inline-block;
         font-family: 'IBM Plex Sans', Arial, Tahoma, sans-serif;
+        color: rgba(22, 24, 35, 0.5);
         font-weight: 600;
         font-size: 12px;
         line-height: 16px;
-        display: inline-block;
         margin-right: 6px;
         margin-top: 5px;
     }
@@ -197,8 +260,8 @@
     span:last-child {
         a {
             &:hover {
-                color: var(--primary-color);
                 text-decoration: underline;
+                color: var(--primary-color);
             }
         }
     }
