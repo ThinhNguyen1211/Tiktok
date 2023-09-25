@@ -8,8 +8,10 @@ import ShortcutModal from '../ShortcutModal';
 
 const cx = classNames.bind(styles);
 let isSwitched = false;
+console.log(isSwitched);
 
 const handleSwitch = () => {
+    // handle switch
     isSwitched = !isSwitched;
     const switchProp = document.querySelector('.switch-prop');
     const switchBtn = document.querySelector('.switch-btn');
@@ -17,6 +19,89 @@ const handleSwitch = () => {
     const transformValue = isSwitched ? 'translateX(20px)' : 'translateX(0)';
     switchProp.style.transform = transformValue;
     isSwitched ? (switchBtn.style.background = 'rgb(79 254 168)') : (switchBtn.style.background = 'rgba(0, 0, 0, 0.1)');
+
+    //* handle dark-mode changed
+    if (isSwitched) {
+        // get elements
+        const body = document.querySelector('body');
+        const header = document.querySelector('.Header_wrapper__H5T4g');
+        const tiktokLogo = document.querySelector('.Header_tiktok-logo__Q2llv');
+        const search = document.querySelector('.Header_search__PKR0D');
+        const searchInput = document.querySelector('.Header_search-input__VJHrA');
+        const spanSpliter = document.querySelector('.spanSpliter');
+        const searchIcon = document.querySelector('.Header_search-icon__z9aVK');
+        const searchActiveIcon = document.querySelector('.Header_search--active-icon__bsyoF');
+        const upload = document.querySelector('.Header_upload__EGBKW');
+        const uploadIcon = document.querySelector('.Header_upload-icon__9m6OI');
+        const deviceChangedIcon = document.querySelector('.device-changed-icon');
+        const menuIcon = document.querySelector('.Header_menu-icon__xXmVp');
+        const menuSettings = document.querySelector('.Header_menu-settings__Wzl9F');
+        const creativeBulbIcon = document.querySelector('.creativeBulbIcon');
+        const languagesSelectIcon = document.querySelector('.languagesSelectIcon');
+        const helpIcon = document.querySelector('.helpIcon');
+        const keyboardIcon = document.querySelector('.keyboardIcon');
+        const nightModeIcon = document.querySelector('.nightModeIcon');
+        // add class for elements
+        header.classList.add('dark-mode-background');
+        body.classList.add('dark-mode-background');
+        tiktokLogo.src = images.tiktokDarkModeLogo;
+        tiktokLogo.style.marginTop = '10px';
+        search.style.background = '#2f2f2f';
+        searchInput.style.color = '#c9c9c9';
+        spanSpliter.style.background = 'rgba(255, 255, 255, .12)';
+        searchIcon.src = images.searchGrayIcon;
+        searchActiveIcon.src = images.searchWhiteIcon;
+        upload.style.background = '#252525';
+        upload.style.color = '#e9e9e9';
+        uploadIcon.src = images.plusWhiteIcon;
+        deviceChangedIcon.src = images.deviceChangedWhiteIcon;
+        menuIcon.src = images.menuWhiteIcon;
+        menuSettings.style.background = '#252525';
+        menuSettings.style.color = '#e9e9e9';
+        creativeBulbIcon.src = images.creativeBulbWhiteIcon;
+        languagesSelectIcon.src = images.languagesSelectWhiteIcon;
+        helpIcon.src = images.helpWhiteIcon;
+        keyboardIcon.src = images.keyboardWhiteIcon;
+        nightModeIcon.src = images.nightModeWhiteIcon;
+    } else {
+        // get elements
+        const body = document.querySelector('body');
+        const header = document.querySelector('.Header_wrapper__H5T4g');
+        const tiktokLogo = document.querySelector('.Header_tiktok-logo__Q2llv');
+        const search = document.querySelector('.Header_search__PKR0D');
+        const searchInput = document.querySelector('.Header_search-input__VJHrA');
+        const spanSpliter = document.querySelector('.spanSpliter');
+        const upload = document.querySelector('.Header_upload__EGBKW');
+        const uploadIcon = document.querySelector('.Header_upload-icon__9m6OI');
+        const deviceChangedIcon = document.querySelector('.device-changed-icon');
+        const menuIcon = document.querySelector('.Header_menu-icon__xXmVp');
+        const menuSettings = document.querySelector('.Header_menu-settings__Wzl9F');
+        const creativeBulbIcon = document.querySelector('.creativeBulbIcon');
+        const languagesSelectIcon = document.querySelector('.languagesSelectIcon');
+        const helpIcon = document.querySelector('.helpIcon');
+        const keyboardIcon = document.querySelector('.keyboardIcon');
+        const nightModeIcon = document.querySelector('.nightModeIcon');
+        // add class for elements
+        header.classList.remove('dark-mode-background');
+        body.classList.remove('dark-mode-background');
+        tiktokLogo.src = images.tiktokLogo;
+        tiktokLogo.style.marginTop = '0';
+        search.style.background = 'rgba(22, 24, 35, 0.06)';
+        searchInput.style.color = 'rgb(22, 24, 35)';
+        spanSpliter.style.background = 'rgba(22, 24, 35, 0.12)';
+        upload.style.background = '#fff';
+        upload.style.color = '#0e0e0e';
+        uploadIcon.src = images.plusIcon;
+        deviceChangedIcon.src = images.deviceChangedIcon;
+        menuIcon.src = images.menuIcon;
+        menuSettings.style.background = '#fff';
+        menuSettings.style.color = '#0e0e0e';
+        creativeBulbIcon.src = images.creativeBulbIcon;
+        languagesSelectIcon.src = images.languagesSelectIcon;
+        helpIcon.src = images.helpIcon;
+        keyboardIcon.src = images.keyboardIcon;
+        nightModeIcon.src = images.nightModeIcon;
+    }
 };
 
 const handleShowLoginModal = () => {
@@ -48,7 +133,10 @@ const handleShowShortcutModal = () => {
     shortcutModal.style.visibility = 'visible';
 };
 
-//TODO: night-mode
+//TODO: Header: sửa thêm phần hover vào ô search , các modal
+//TODO: Sidebar: get ra thẻ ul, queryselectorAll các thẻ li, dùng forEach các thẻ li -> css lại thẻ a
+
+//TODO: sửa thêm cơ chế khi scroll xuống quá mức của sidebar hoặc language thì nó sẽ scroll luôn content
 
 function Header() {
     return (
@@ -83,7 +171,11 @@ function Header() {
                         Đăng nhập
                     </button>
                     <div className={cx('device-changed')}>
-                        <img src={images.deviceChangedIcon} alt="Device changed icon" />
+                        <img
+                            src={images.deviceChangedIcon}
+                            alt="Device changed icon"
+                            className={cx('device-changed-icon')}
+                        />
                         <div className={cx('device-download')}>
                             <div className={cx('download-wrapper')}>
                                 <img src={images.tiktokDesktop} alt="tiktok desktop" className={cx('download-image')} />
@@ -104,7 +196,11 @@ function Header() {
                             <ul>
                                 <li>
                                     <div>
-                                        <img src={images.creativeBulbIcon} alt="creative bulb" />
+                                        <img
+                                            src={images.creativeBulbIcon}
+                                            alt="creative bulb"
+                                            className={cx('creativeBulbIcon')}
+                                        />
                                         <a href="https://www.tiktok.com/live/creators/vi-VN/?enter_from=more&lang=vi-VN&region=VN">
                                             Trung tâm nhà sáng tạo LIVE
                                         </a>
@@ -112,26 +208,38 @@ function Header() {
                                 </li>
                                 <li>
                                     <div className={cx('language-selected')} onClick={() => handleShowLanguageModal()}>
-                                        <img src={images.languagesSelectIcon} alt="languages select" />
+                                        <img
+                                            src={images.languagesSelectIcon}
+                                            alt="languages select"
+                                            className={cx('languagesSelectIcon')}
+                                        />
                                         <p>Tiếng Việt</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
-                                        <img src={images.helpIcon} alt="help icon" />
+                                        <img src={images.helpIcon} alt="help icon" className={cx('helpIcon')} />
                                         <a href="https://www.tiktok.com/feedback">Phản hồi và trợ giúp</a>
                                     </div>
                                 </li>
                                 <li>
                                     <div className={cx('keyboard-shortcut')} onClick={() => handleShowShortcutModal()}>
-                                        <img src={images.keyboardIcon} alt="keyboard icon" />
+                                        <img
+                                            src={images.keyboardIcon}
+                                            alt="keyboard icon"
+                                            className={cx('keyboardIcon')}
+                                        />
                                         <p>Phím tắt trên bàn phím</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
                                         <div className={cx('night-mode')}>
-                                            <img src={images.nightModeIcon} alt="night mode icon" />
+                                            <img
+                                                src={images.nightModeIcon}
+                                                alt="night mode icon"
+                                                className={cx('nightModeIcon')}
+                                            />
                                             <p>Chế độ tối</p>
                                         </div>
                                         <div className={cx('switch-wrapper')}>

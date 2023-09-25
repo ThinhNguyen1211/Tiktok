@@ -1,19 +1,30 @@
 const Image = {
     tiktokLogo: require('~/assets/images/tiktokLogo.svg').default,
+    tiktokDarkModeLogo: require('~/assets/images/tiktokDarkModeLogo.svg').default,
     tiktokDesktop: require('~/assets/images/tiktokDesktop.png'),
 
     searchIcon: require('~/assets/images/Icons/searchIcon.svg').default,
     searchBlackIcon: require('~/assets/images/Icons/searchBlackIcon.svg').default,
+    searchGrayIcon: require('~/assets/images/Icons/searchGrayIcon.svg').default,
+    searchWhiteIcon: require('~/assets/images/Icons/searchWhiteIcon.svg').default,
 
     plusIcon: require('~/assets/images/Icons/plusIcon.svg').default,
+    plusWhiteIcon: require('~/assets/images/Icons/plusWhiteIcon.svg').default,
     deviceChangedIcon: require('~/assets/images/Icons/deviceChangedIcon.svg').default,
+    deviceChangedWhiteIcon: require('~/assets/images/Icons/deviceChangedWhiteIcon.svg').default,
     menuIcon: require('~/assets/images/Icons/menuIcon.svg').default,
+    menuWhiteIcon: require('~/assets/images/Icons/menuWhiteIcon.svg').default,
 
     creativeBulbIcon: require('~/assets/images/Icons/creativeBulbIcon.svg').default,
+    creativeBulbWhiteIcon: require('~/assets/images/Icons/creativeBulbWhiteIcon.svg').default,
     languagesSelectIcon: require('~/assets/images/Icons/languagesSelectIcon.svg').default,
+    languagesSelectWhiteIcon: require('~/assets/images/Icons/languagesSelectWhiteIcon.svg').default,
     helpIcon: require('~/assets/images/Icons/helpIcon.svg').default,
+    helpWhiteIcon: require('~/assets/images/Icons/helpWhiteIcon.svg').default,
     keyboardIcon: require('~/assets/images/Icons/keyboardIcon.svg').default,
+    keyboardWhiteIcon: require('~/assets/images/Icons/keyboardWhiteIcon.svg').default,
     nightModeIcon: require('~/assets/images/Icons/nightModeIcon.svg').default,
+    nightModeWhiteIcon: require('~/assets/images/Icons/nightModeWhiteIcon.svg').default,
 
     homeIcon: require('~/assets/images/Icons/homeIcon.svg').default,
     homeActiveIcon: require('~/assets/images/Icons/homeActiveIcon.svg').default,
