@@ -2,6 +2,7 @@ const Image = {
     tiktokLogo: require('~/assets/images/tiktokLogo.svg').default,
     tiktokDarkModeLogo: require('~/assets/images/tiktokDarkModeLogo.svg').default,
     tiktokDesktop: require('~/assets/images/tiktokDesktop.png'),
+    tiktokDesktopDark: require('~/assets/images/tiktokDesktopDark.png'),
 
     searchIcon: require('~/assets/images/Icons/searchIcon.svg').default,
     searchBlackIcon: require('~/assets/images/Icons/searchBlackIcon.svg').default,
@@ -44,9 +45,12 @@ const Image = {
     loadingIcon: require('~/assets/images/Icons/loadingIcon.svg').default,
 
     rightArrowIcon: require('~/assets/images/Icons/rightArrowIcon.svg').default,
+    rightArrowGrayIcon: require('~/assets/images/Icons/rightArrowGrayIcon.svg').default,
 
     qrIcon: require('~/assets/images/Icons/qrIcon.svg').default,
+    qrWhiteIcon: require('~/assets/images/Icons/qrWhiteIcon.svg').default,
     humanIcon: require('~/assets/images/Icons/humanIcon.svg').default,
+    humanWhiteIcon: require('~/assets/images/Icons/humanWhiteIcon.svg').default,
     facebookIcon: require('~/assets/images/Icons/facebookIcon.svg').default,
     googleIcon: require('~/assets/images/Icons/googleIcon.svg').default,
     twitterIcon: require('~/assets/images/Icons/twitterIcon.svg').default,
@@ -54,6 +58,7 @@ const Image = {
     kakaotalkIcon: require('~/assets/images/Icons/kakaotalkIcon.svg').default,
     instagramIcon: require('~/assets/images/Icons/instagramIcon.svg').default,
     closeIcon: require('~/assets/images/Icons/closeIcon.svg').default,
+    closeWhiteIcon: require('~/assets/images/Icons/closeWhiteIcon.svg').default,
 };
 
 export default Image;

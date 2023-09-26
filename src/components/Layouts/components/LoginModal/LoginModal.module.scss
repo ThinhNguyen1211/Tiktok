@@ -19,7 +19,7 @@
     border-radius: 8px;
     max-height: 693px;
     height: 80%;
-    background-color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
 }
 
 .login-modal-content {
@@ -145,7 +145,7 @@
     }
 }
 
-.close-btn {
+.login-modal-close-btn {
     user-select: none;
     position: absolute;
     cursor: pointer;

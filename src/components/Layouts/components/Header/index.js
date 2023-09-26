@@ -8,7 +8,6 @@ import ShortcutModal from '../ShortcutModal';
 
 const cx = classNames.bind(styles);
 let isSwitched = false;
-console.log(isSwitched);
 
 const handleSwitch = () => {
     // handle switch
@@ -34,6 +33,11 @@ const handleSwitch = () => {
         const upload = document.querySelector('.Header_upload__EGBKW');
         const uploadIcon = document.querySelector('.Header_upload-icon__9m6OI');
         const deviceChangedIcon = document.querySelector('.device-changed-icon');
+        const deviceDownload = document.querySelector('.Header_device-download-wrapper__kdZfI');
+        const deviceDownloadImg = document.querySelector('.Header_download-image__kxWSr');
+        const deviceDownloadHeader = document.querySelector('.Header_download-header__57PwS');
+        const downloadOn = document.querySelector('.Header_download-on__7Zggw');
+        const downloadRightArrow = document.querySelector('.Header_right-arrow__TkID6');
         const menuIcon = document.querySelector('.Header_menu-icon__xXmVp');
         const menuSettings = document.querySelector('.Header_menu-settings__Wzl9F');
         const creativeBulbIcon = document.querySelector('.creativeBulbIcon');
@@ -41,6 +45,18 @@ const handleSwitch = () => {
         const helpIcon = document.querySelector('.helpIcon');
         const keyboardIcon = document.querySelector('.keyboardIcon');
         const nightModeIcon = document.querySelector('.nightModeIcon');
+        const loginModal = document.querySelector('.LoginModal_login-modal__CuRyc');
+        const loginModalCloseBtn = document.querySelector('.LoginModal_login-modal-close-btn__hHZxg');
+        const loginModalCloseIcon = document.querySelector('.close-icon');
+        const loginModalHeader = document.querySelector('.login-modal-header');
+        const loginModalqrIcon = document.querySelector('.login-modal-qrIcon');
+        const loginModalHumanIcon = document.querySelector('.login-modal-humanIcon');
+        const loginModalContainer = document.querySelector('.LoginModal_login-container__UKFax');
+        const loginModalLinks = loginModalContainer.querySelectorAll('a');
+        const loginModalPolicy = document.querySelector('.LoginModal_login-policy__4Lcdh');
+        const loginModalPolicyParagraph = document.querySelector('.login-policy-paragraph');
+        const loginModalPolicyLinks = loginModalPolicyParagraph.querySelectorAll('a');
+        const loginModalAssignParagraph = document.querySelector('.assign-account-paragraph');
         // add class for elements
         header.classList.add('dark-mode-background');
         body.classList.add('dark-mode-background');
@@ -55,6 +71,11 @@ const handleSwitch = () => {
         upload.style.color = '#e9e9e9';
         uploadIcon.src = images.plusWhiteIcon;
         deviceChangedIcon.src = images.deviceChangedWhiteIcon;
+        deviceDownload.style.background = '#252525';
+        deviceDownloadImg.src = images.tiktokDesktopDark;
+        deviceDownloadHeader.style.color = '#fff';
+        downloadOn.style.color = '#7d7d7d';
+        downloadRightArrow.src = images.rightArrowGrayIcon;
         menuIcon.src = images.menuWhiteIcon;
         menuSettings.style.background = '#252525';
         menuSettings.style.color = '#e9e9e9';
@@ -63,6 +84,22 @@ const handleSwitch = () => {
         helpIcon.src = images.helpWhiteIcon;
         keyboardIcon.src = images.keyboardWhiteIcon;
         nightModeIcon.src = images.nightModeWhiteIcon;
+        loginModal.style.background = '#252525';
+        loginModalCloseBtn.style.background = 'rgba(255, 255, 255, 0.04)';
+        loginModalCloseIcon.src = images.closeWhiteIcon;
+        loginModalHeader.style.color = '#fff';
+        loginModalqrIcon.src = images.qrWhiteIcon;
+        loginModalHumanIcon.src = images.humanWhiteIcon;
+        loginModalLinks.forEach((loginModalLink) => {
+            loginModalLink.style.color = '#fff';
+            loginModalLink.style.background = '#2e2e2e';
+        });
+        loginModalPolicy.style.background = '#121212';
+        loginModalPolicyParagraph.style.color = 'rgba(255, 255, 255, 0.5)';
+        loginModalPolicyLinks.forEach((loginModalPolicyLink) => {
+            loginModalPolicyLink.style.color = '#fff';
+        });
+        loginModalAssignParagraph.style.color = '#fff';
     } else {
         // get elements
         const body = document.querySelector('body');
@@ -71,9 +108,16 @@ const handleSwitch = () => {
         const search = document.querySelector('.Header_search__PKR0D');
         const searchInput = document.querySelector('.Header_search-input__VJHrA');
         const spanSpliter = document.querySelector('.spanSpliter');
+        const searchIcon = document.querySelector('.Header_search-icon__z9aVK');
+        const searchActiveIcon = document.querySelector('.Header_search--active-icon__bsyoF');
         const upload = document.querySelector('.Header_upload__EGBKW');
         const uploadIcon = document.querySelector('.Header_upload-icon__9m6OI');
         const deviceChangedIcon = document.querySelector('.device-changed-icon');
+        const deviceDownload = document.querySelector('.Header_device-download-wrapper__kdZfI');
+        const deviceDownloadImg = document.querySelector('.Header_download-image__kxWSr');
+        const deviceDownloadHeader = document.querySelector('.Header_download-header__57PwS');
+        const downloadOn = document.querySelector('.Header_download-on__7Zggw');
+        const downloadRightArrow = document.querySelector('.Header_right-arrow__TkID6');
         const menuIcon = document.querySelector('.Header_menu-icon__xXmVp');
         const menuSettings = document.querySelector('.Header_menu-settings__Wzl9F');
         const creativeBulbIcon = document.querySelector('.creativeBulbIcon');
@@ -81,6 +125,18 @@ const handleSwitch = () => {
         const helpIcon = document.querySelector('.helpIcon');
         const keyboardIcon = document.querySelector('.keyboardIcon');
         const nightModeIcon = document.querySelector('.nightModeIcon');
+        const loginModal = document.querySelector('.LoginModal_login-modal__CuRyc');
+        const loginModalCloseBtn = document.querySelector('.LoginModal_login-modal-close-btn__hHZxg');
+        const loginModalCloseIcon = document.querySelector('.close-icon');
+        const loginModalHeader = document.querySelector('.login-modal-header');
+        const loginModalqrIcon = document.querySelector('.login-modal-qrIcon');
+        const loginModalHumanIcon = document.querySelector('.login-modal-humanIcon');
+        const loginModalContainer = document.querySelector('.LoginModal_login-container__UKFax');
+        const loginModalLinks = loginModalContainer.querySelectorAll('a');
+        const loginModalPolicy = document.querySelector('.LoginModal_login-policy__4Lcdh');
+        const loginModalPolicyParagraph = document.querySelector('.login-policy-paragraph');
+        const loginModalPolicyLinks = loginModalPolicyParagraph.querySelectorAll('a');
+        const loginModalAssignParagraph = document.querySelector('.assign-account-paragraph');
         // add class for elements
         header.classList.remove('dark-mode-background');
         body.classList.remove('dark-mode-background');
@@ -89,10 +145,17 @@ const handleSwitch = () => {
         search.style.background = 'rgba(22, 24, 35, 0.06)';
         searchInput.style.color = 'rgb(22, 24, 35)';
         spanSpliter.style.background = 'rgba(22, 24, 35, 0.12)';
+        searchIcon.src = images.searchIcon;
+        searchActiveIcon.src = images.searchBlackIcon;
         upload.style.background = '#fff';
         upload.style.color = '#0e0e0e';
         uploadIcon.src = images.plusIcon;
         deviceChangedIcon.src = images.deviceChangedIcon;
+        deviceDownload.style.background = '#fff';
+        deviceDownloadImg.src = images.tiktokDesktop;
+        deviceDownloadHeader.style.color = '#0e0e0e';
+        downloadOn.style.color = 'rgba(22, 24, 35, 0.3)';
+        downloadRightArrow.src = images.rightArrowIcon;
         menuIcon.src = images.menuIcon;
         menuSettings.style.background = '#fff';
         menuSettings.style.color = '#0e0e0e';
@@ -101,6 +164,22 @@ const handleSwitch = () => {
         helpIcon.src = images.helpIcon;
         keyboardIcon.src = images.keyboardIcon;
         nightModeIcon.src = images.nightModeIcon;
+        loginModal.style.background = '#fff';
+        loginModalCloseBtn.style.background = 'rgba(22, 24, 35, 0.03)';
+        loginModalCloseIcon.src = images.closeIcon;
+        loginModalHeader.style.color = '#0e0e0e';
+        loginModalqrIcon.src = images.qrIcon;
+        loginModalHumanIcon.src = images.humanIcon;
+        loginModalLinks.forEach((loginModalLink) => {
+            loginModalLink.style.color = '#0e0e0e';
+            loginModalLink.style.background = '#fff';
+        });
+        loginModalPolicy.style.background = '#fff';
+        loginModalPolicyParagraph.style.color = 'rgba(22, 24, 35, 0.5)';
+        loginModalPolicyLinks.forEach((loginModalPolicyLink) => {
+            loginModalPolicyLink.style.color = 'rgb(22, 24, 35)';
+        });
+        loginModalAssignParagraph.style.color = 'rgb(22, 24, 35)';
     }
 };
 
@@ -133,7 +212,7 @@ const handleShowShortcutModal = () => {
     shortcutModal.style.visibility = 'visible';
 };
 
-//TODO: Header: sửa thêm phần hover vào ô search , các modal
+//TODO: Header: sửa thêm phần hover (mouseEnter, mouseLeave) vào ô search , download modal, language, shortcut modal
 //TODO: Sidebar: get ra thẻ ul, queryselectorAll các thẻ li, dùng forEach các thẻ li -> css lại thẻ a
 
 //TODO: sửa thêm cơ chế khi scroll xuống quá mức của sidebar hoặc language thì nó sẽ scroll luôn content
@@ -176,8 +255,8 @@ function Header() {
                             alt="Device changed icon"
                             className={cx('device-changed-icon')}
                         />
-                        <div className={cx('device-download')}>
-                            <div className={cx('download-wrapper')}>
+                        <div className={cx('device-download-wrapper')}>
+                            <div className={cx('download-container')}>
                                 <img src={images.tiktokDesktop} alt="tiktok desktop" className={cx('download-image')} />
                                 <p className={cx('download-header')}>Ứng dụng TikTok cho máy tính</p>
                                 <button className={cx('download-btn')} onClick={() => handleShowDownloadModal()}>

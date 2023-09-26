@@ -186,7 +186,7 @@
     user-select: none;
     z-index: 1;
 
-    &:hover .device-download {
+    &:hover .device-download-wrapper {
         display: block;
         animation: showUp 0.2s;
     }
@@ -201,7 +201,7 @@
     }
 }
 
-.device-download {
+.device-download-wrapper {
     cursor: default;
     display: none;
     position: absolute;
@@ -213,7 +213,7 @@
     z-index: 2;
 }
 
-.download-wrapper {
+.download-container {
     margin-top: 5px;
     padding: 16px 20px;
     position: relative;

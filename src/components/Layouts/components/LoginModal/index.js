@@ -21,13 +21,13 @@ function LoginModal() {
                 <div className={cx('login-modal-content')}>
                     <div className={cx('login-wrapper')}>
                         <div className={cx('login-container')}>
-                            <h2>Đăng nhập vào TikTok</h2>
+                            <h2 className={cx('login-modal-header')}>Đăng nhập vào TikTok</h2>
                             <a href="https://www.tiktok.com/login/qrcode?enter_from=homepage_hot&enter_method=click_top_bar&hide_close_btn=1&is_modal=1&lang=vi-VN&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fvi-VN&type=">
-                                <img src={images.qrIcon} alt="qr icon" />
+                                <img src={images.qrIcon} alt="qr icon" className={cx('login-modal-qrIcon')} />
                                 <p>Sử dụng mã QR</p>
                             </a>
                             <a href="https://www.tiktok.com/login/phone-or-email?enter_from=homepage_hot&enter_method=click_navigation_bar&hide_close_btn=1&is_modal=1&lang=vi-VN&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fupload%2F&type=">
-                                <img src={images.humanIcon} alt="human icon" />
+                                <img src={images.humanIcon} alt="human icon" className={cx('login-modal-humanIcon')} />
                                 <p>Số điện thoại / Email / TikTok ID</p>
                             </a>
                             <a onClick={() => alertCantLogin('Facebook')}>
@@ -96,7 +96,7 @@ function LoginModal() {
                         </div>
                     </div>
                     <div className={cx('login-policy')}>
-                        <p>
+                        <p className={cx('login-policy-paragraph')}>
                             Bằng cách tiếp tục, bạn đồng ý với{' '}
                             <a href="https://www.tiktok.com/legal/terms-of-use?lang=vi-VN">Điều khoản Sử dụng</a> của
                             TikTok và xác nhận rằng bạn đã đọc hiểu{' '}
@@ -107,11 +107,11 @@ function LoginModal() {
                         </p>
                     </div>
                     <div className={cx('assign-account')}>
-                        <p>Bạn không có tài khoản?</p>
+                        <p className={cx('assign-account-paragraph')}>Bạn không có tài khoản?</p>
                         <a href="https://www.tiktok.com/signup">Đăng ký</a>
                     </div>
-                    <div className={cx('close-btn')} onClick={() => handleClose()}>
-                        <img src={images.closeIcon} alt="close icon" />
+                    <div className={cx('login-modal-close-btn')} onClick={() => handleClose()}>
+                        <img src={images.closeIcon} alt="close icon" className={cx('close-icon')} />
                     </div>
                 </div>
             </div>
