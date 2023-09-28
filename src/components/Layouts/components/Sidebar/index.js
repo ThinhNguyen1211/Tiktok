@@ -15,8 +15,13 @@ const handleShowLoginModal = () => {
 
 function Sidebar() {
     let isActive = useRef(0);
+    let [isSwitched, setSwitched] = useState(false);
     let [activeLi, setActiveLi] = useState(null);
     useEffect(() => {
+        const switchBtn = document.querySelector('.switch-btn');
+        switchBtn.addEventListener('click', () => {
+            setSwitched(!isSwitched);
+        });
         const liElements = document.querySelectorAll('.nav');
         if (activeLi === null) {
             liElements[0].classList.add('active');
@@ -36,15 +41,39 @@ function Sidebar() {
                 setActiveLi(liElement);
             });
         });
-    });
+    }, [isSwitched, isActive, activeLi]);
+
+    // if (isSwitched) {
+    //     images.homeWhiteIcon;
+    //     if (isActive.current === 0) {
+    //         images.homeActiveIcon;
+    //     }
+    // } else {
+    //     images.homeIcon;
+    //     if (isActive.current === 0) {
+    //         images.homeActiveIcon;
+    //     }
+    // }
+
+    // isActive.current === 0
+    // ? images.homeActiveIcon
+    // : isSwitched
+    // ? images.homeWhiteIcon
+    // : images.homeIcon
 
     return (
         <aside className={cx('wrapper')}>
             <ul className={cx('nav-direct')}>
                 <li className={cx('home', 'nav')}>
-                    <Link to="/">
+                    <Link className={cx('nav-direct-link')} to="/">
                         <img
-                            src={isActive.current === 0 ? images.homeActiveIcon : images.homeIcon}
+                            src={
+                                isActive.current === 0
+                                    ? images.homeActiveIcon
+                                    : isSwitched
+                                    ? images.homeWhiteIcon
+                                    : images.homeIcon
+                            }
                             alt="home icon"
                             className={cx('home-icon')}
                         />{' '}
@@ -52,9 +81,15 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li className={cx('following', 'nav')}>
-                    <Link to="/following">
+                    <Link className={cx('nav-direct-link')} to="/following">
                         <img
-                            src={isActive.current === 1 ? images.followActiveIcon : images.followIcon}
+                            src={
+                                isActive.current === 1
+                                    ? images.followActiveIcon
+                                    : isSwitched
+                                    ? images.followWhiteIcon
+                                    : images.followIcon
+                            }
                             alt="follow icon"
                             className={cx('follow-icon')}
                         />{' '}
@@ -62,9 +97,15 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li className={cx('explore', 'nav')}>
-                    <Link to="/explore">
+                    <Link className={cx('nav-direct-link')} to="/explore">
                         <img
-                            src={isActive.current === 2 ? images.exploreActiveIcon : images.exploreIcon}
+                            src={
+                                isActive.current === 2
+                                    ? images.exploreActiveIcon
+                                    : isSwitched
+                                    ? images.exploreWhiteIcon
+                                    : images.exploreIcon
+                            }
                             alt="explore icon"
                             className={cx('explore-icon')}
                         />{' '}
@@ -72,9 +113,15 @@ function Sidebar() {
                     </Link>
                 </li>
                 <li className={cx('live', 'nav')}>
-                    <Link to="/live">
+                    <Link className={cx('nav-direct-link')} to="/live">
                         <img
-                            src={isActive.current === 3 ? images.liveActiveIcon : images.liveIcon}
+                            src={
+                                isActive.current === 3
+                                    ? images.liveActiveIcon
+                                    : isSwitched
+                                    ? images.liveWhiteIcon
+                                    : images.liveIcon
+                            }
                             alt="live icon"
                             className={cx('live-icon')}
                         />{' '}
@@ -100,14 +147,15 @@ function Sidebar() {
                             className={cx('effect-background')}
                         />
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="white">
                                 <path
+                                    className={cx('effect-Icon')}
                                     fill="black"
                                     d="M0 18V9a9 9 0 0 1 18 0v9H0Zm15.75-2.25V9a6.75 6.75 0 0 0-9.978-5.93 6.744 6.744 0 0 1 6.619 2.971A4.483 4.483 0 0 1 13.5 9v6.75h2.25ZM6.502 5.257A4.5 4.5 0 0 0 2.25 9.75v6H4.5V9c0-1.56.795-2.936 2.002-3.743Zm4.096 2.16A2.25 2.25 0 0 0 6.75 9v6.75h4.5v-6a4.48 4.48 0 0 0-.652-2.333Z"
                                 ></path>
                             </svg>
 
-                            <h4>Tạo hiệu ứng</h4>
+                            <h4 className={cx('effect-Paragraph')}>Tạo hiệu ứng</h4>
                         </div>
                     </a>
                 </div>
@@ -179,7 +227,7 @@ function Sidebar() {
                         <span className={cx('policy-execute')}>NGUYÊN TẮC THỰC THI PHÁP LUẬT CỦA TIKTOK</span>
                     </div>
                 </div>
-                <span>
+                <span className={cx('policy-cloneBy')}>
                     ©TikTok clone by <a href="https://www.facebook.com/profile.php?id=100007758302640">Thinh Nguyen</a>
                 </span>
             </div>

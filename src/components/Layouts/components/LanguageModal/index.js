@@ -25,9 +25,10 @@ function LanguageModal() {
                             src={images.closeIcon}
                             alt="close icon"
                             style={{ marginLeft: '24px', marginTop: '6px', width: '20px', height: '20px' }}
+                            className={cx('language-header-img')}
                         />
                     </i>
-                    <p>Ngôn ngữ</p>
+                    <p className={cx('language-header-p')}>Ngôn ngữ</p>
                 </div>
                 <ul role="listbox" aria-labelledby="language-selection-menu-header" className={cx('language-props')}>
                     <li tabIndex="0" role="option" aria-selected>

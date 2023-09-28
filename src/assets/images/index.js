@@ -28,12 +28,16 @@ const Image = {
     nightModeWhiteIcon: require('~/assets/images/Icons/nightModeWhiteIcon.svg').default,
 
     homeIcon: require('~/assets/images/Icons/homeIcon.svg').default,
+    homeWhiteIcon: require('~/assets/images/Icons/homeWhiteIcon.svg').default,
     homeActiveIcon: require('~/assets/images/Icons/homeActiveIcon.svg').default,
     followIcon: require('~/assets/images/Icons/followIcon.svg').default,
+    followWhiteIcon: require('~/assets/images/Icons/followWhiteIcon.svg').default,
     followActiveIcon: require('~/assets/images/Icons/followActiveIcon.svg').default,
     exploreIcon: require('~/assets/images/Icons/exploreIcon.svg').default,
+    exploreWhiteIcon: require('~/assets/images/Icons/exploreWhiteIcon.svg').default,
     exploreActiveIcon: require('~/assets/images/Icons/exploreActiveIcon.svg').default,
     liveIcon: require('~/assets/images/Icons/liveIcon.svg').default,
+    liveWhiteIcon: require('~/assets/images/Icons/liveWhiteIcon.svg').default,
     liveActiveIcon: require('~/assets/images/Icons/liveActiveIcon.svg').default,
 
     loveIcon: require('~/assets/images/Icons/loveIcon.svg').default,

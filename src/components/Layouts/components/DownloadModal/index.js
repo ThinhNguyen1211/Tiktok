@@ -22,18 +22,18 @@ function DownloadModal() {
                             className={cx('close-btn')}
                             onClick={() => handleCloseDownloadModal()}
                         />
-                        <p>Tải ứng dụng TikTok</p>
+                        <p className={cx('download-modal-header-h2')}>Tải ứng dụng TikTok</p>
                     </div>
                     <div className={cx('download-modal-content')}>
                         <div className={cx('download-qr')}>
-                            <p>Hãy quét mã QR để tải TikTok về máy</p>
+                            <p className={cx('download-qr-des')}>Hãy quét mã QR để tải TikTok về máy</p>
                             <img
                                 src="https://sf16-website-login.neutral.ttwstatic.com/obj/tiktok_web_login_static/tiktok/webapp/main/webapp-desktop/47624c235266dedd8e4d.png"
                                 alt="qr-img"
                             />
                         </div>
                         <div className={cx('download-from-wrapper')}>
-                            <p>Tải về từ cửa hàng ứng dụng</p>
+                            <p className={cx('download-from--des')}>Tải về từ cửa hàng ứng dụng</p>
                             <div className={cx('download-from-container')}>
                                 <a
                                     href="https://www.microsoft.com/store/apps/9NH2GPH4JZS4"
