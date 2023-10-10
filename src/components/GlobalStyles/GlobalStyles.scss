@@ -8,6 +8,8 @@
     // default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --search-width: 38.893vw;
+    // --search-width: 500px;
 }
 
 * {
@@ -60,4 +62,19 @@ body {
 
 .dark-mode-background {
     background: #121212;
+}
+
+button,
+input,
+[tabIndex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
 }

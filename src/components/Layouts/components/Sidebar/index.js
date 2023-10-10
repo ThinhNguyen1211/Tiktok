@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 
 import Styles from '../Sidebar/Sidebar.module.scss';
 import images from '~/assets/images';
+import storage from '../storage';
 
 const cx = classNames.bind(Styles);
 
@@ -17,10 +18,21 @@ function Sidebar() {
     let isActive = useRef(0);
     let [isSwitched, setSwitched] = useState(false);
     let [activeLi, setActiveLi] = useState(null);
+
     useEffect(() => {
         const switchBtn = document.querySelector('.switch-btn');
+        if (storage.get() === false) {
+            setSwitched(false);
+            storage.set(false);
+        }
+        if (storage.get() === true) {
+            setSwitched(true);
+            storage.set(true);
+        }
+
         switchBtn.addEventListener('click', () => {
             setSwitched(!isSwitched);
+            storage.set(!isSwitched);
         });
         const liElements = document.querySelectorAll('.nav');
         if (activeLi === null) {
@@ -43,24 +55,6 @@ function Sidebar() {
         });
     }, [isSwitched, isActive, activeLi]);
 
-    // if (isSwitched) {
-    //     images.homeWhiteIcon;
-    //     if (isActive.current === 0) {
-    //         images.homeActiveIcon;
-    //     }
-    // } else {
-    //     images.homeIcon;
-    //     if (isActive.current === 0) {
-    //         images.homeActiveIcon;
-    //     }
-    // }
-
-    // isActive.current === 0
-    // ? images.homeActiveIcon
-    // : isSwitched
-    // ? images.homeWhiteIcon
-    // : images.homeIcon
-
     return (
         <aside className={cx('wrapper')}>
             <ul className={cx('nav-direct')}>
@@ -70,7 +64,7 @@ function Sidebar() {
                             src={
                                 isActive.current === 0
                                     ? images.homeActiveIcon
-                                    : isSwitched
+                                    : storage.get()
                                     ? images.homeWhiteIcon
                                     : images.homeIcon
                             }
@@ -86,7 +80,7 @@ function Sidebar() {
                             src={
                                 isActive.current === 1
                                     ? images.followActiveIcon
-                                    : isSwitched
+                                    : storage.get()
                                     ? images.followWhiteIcon
                                     : images.followIcon
                             }
@@ -102,7 +96,7 @@ function Sidebar() {
                             src={
                                 isActive.current === 2
                                     ? images.exploreActiveIcon
-                                    : isSwitched
+                                    : storage.get()
                                     ? images.exploreWhiteIcon
                                     : images.exploreIcon
                             }
@@ -118,7 +112,7 @@ function Sidebar() {
                             src={
                                 isActive.current === 3
                                     ? images.liveActiveIcon
-                                    : isSwitched
+                                    : storage.get()
                                     ? images.liveWhiteIcon
                                     : images.liveIcon
                             }

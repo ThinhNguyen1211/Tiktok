@@ -3,11 +3,16 @@ const Image = {
     tiktokDarkModeLogo: require('~/assets/images/tiktokDarkModeLogo.svg').default,
     tiktokDesktop: require('~/assets/images/tiktokDesktop.png'),
     tiktokDesktopDark: require('~/assets/images/tiktokDesktopDark.png'),
+    avatar: require('~/assets/images/avatar.jpg'),
+    verifiedIcon: require('~/assets/images/Icons/verifiedIcon.svg').default,
 
     searchIcon: require('~/assets/images/Icons/searchIcon.svg').default,
     searchBlackIcon: require('~/assets/images/Icons/searchBlackIcon.svg').default,
     searchGrayIcon: require('~/assets/images/Icons/searchGrayIcon.svg').default,
     searchWhiteIcon: require('~/assets/images/Icons/searchWhiteIcon.svg').default,
+    dotIcon: require('~/assets/images/Icons/dotIcon.svg').default,
+    trendingIcon: require('~/assets/images/Icons/trendingIcon.svg').default,
+    upArrowIcon: require('~/assets/images/Icons/upArrowIcon.svg').default,
 
     plusIcon: require('~/assets/images/Icons/plusIcon.svg').default,
     plusWhiteIcon: require('~/assets/images/Icons/plusWhiteIcon.svg').default,
