@@ -218,7 +218,14 @@ function Sidebar() {
                 <div>
                     <span className={cx('more-policy')}>Thêm</span>
                     <div className={cx('policy-execute-wrapper')}>
-                        <span className={cx('policy-execute')}>NGUYÊN TẮC THỰC THI PHÁP LUẬT CỦA TIKTOK</span>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.tiktok.com/legal/page/global/law-enforcement/vi"
+                            className={cx('policy-execute')}
+                        >
+                            NGUYÊN TẮC THỰC THI PHÁP LUẬT CỦA TIKTOK
+                        </a>
                     </div>
                 </div>
                 <span className={cx('policy-cloneBy')}>

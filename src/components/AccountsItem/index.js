@@ -64,7 +64,7 @@ function AccountsItem() {
             storage.set(!isSwitched);
         });
 
-        if (isSwitched) {
+        if (storage.get()) {
             accountItems.forEach((item) => {
                 item.style.background = 'rgb(37, 37, 37)';
                 item.onmouseenter = () => {
@@ -99,26 +99,30 @@ function AccountsItem() {
         }
     }, [isSwitched]);
 
-    return accountsProfile.map((account, i) => {
-        return (
-            <li className={cx('account-item')} key={i}>
-                <span shape="circle" style={{ width: '37px', height: '37px' }}>
-                    <img
-                        src={account.avatar}
-                        alt="avatar"
-                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                </span>
-                <div>
-                    <h4 className={cx('account-item-username')}>
-                        {account.userName}{' '}
-                        {account.verified ? <img src={images.verifiedIcon} alt="verified icon" /> : ''}
-                    </h4>
-                    <p className={cx('account-item-nickname')}>{account.nickName}</p>
-                </div>
-            </li>
-        );
-    });
+    return (
+        <div className={cx('wrapper')}>
+            {accountsProfile.map((account, i) => {
+                return (
+                    <li className={cx('account-item')} key={i}>
+                        <span shape="circle" style={{ width: '37px', height: '37px' }}>
+                            <img
+                                src={account.avatar}
+                                alt="avatar"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
+                        </span>
+                        <div>
+                            <h4 className={cx('account-item-username')}>
+                                {account.userName}{' '}
+                                {account.verified ? <img src={images.verifiedIcon} alt="verified icon" /> : ''}
+                            </h4>
+                            <p className={cx('account-item-nickname')}>{account.nickName}</p>
+                        </div>
+                    </li>
+                );
+            })}
+        </div>
+    );
 }
 
 export default AccountsItem;

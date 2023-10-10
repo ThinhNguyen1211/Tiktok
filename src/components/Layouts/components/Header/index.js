@@ -49,6 +49,7 @@ function Header() {
     let [searchInputValue, setSearchInputValue] = useState('');
     let [searchInputState, setSearchInputState] = useState(false);
     let isSwitched = storage.get();
+
     //? Fake API
     const API = [
         { content: 'This website has been cloned by Thinh Nguyen', state: 'trending', stateIcon: images.trendingIcon },
@@ -237,6 +238,7 @@ function Header() {
                 searchClearBtn.style.display = 'none';
                 setSearchInputValue('');
                 setSearchInputState(false);
+                searchInput.focus();
             });
             searchClearIcon.style.fill = '#767676';
             searchLoadingIcon.style.fill = '#767676';
@@ -261,13 +263,15 @@ function Header() {
                     result.style.background = 'rgb(37, 37, 37)';
                 };
             });
-            searchSeeAllResults.style.background = 'rgb(37, 37, 37)';
-            searchSeeAllResults.onmouseenter = () => {
-                searchSeeAllResults.style.background = 'rgba(255, 255, 255, 0.03)';
-            };
-            searchSeeAllResults.onmouseleave = () => {
+            if (searchSeeAllResults) {
                 searchSeeAllResults.style.background = 'rgb(37, 37, 37)';
-            };
+                searchSeeAllResults.onmouseenter = () => {
+                    searchSeeAllResults.style.background = 'rgba(255, 255, 255, 0.03)';
+                };
+                searchSeeAllResults.onmouseleave = () => {
+                    searchSeeAllResults.style.background = 'rgb(37, 37, 37)';
+                };
+            }
 
             upload.style.background = '#252525';
             upload.style.color = '#e9e9e9';
@@ -485,6 +489,7 @@ function Header() {
                 searchClearBtn.style.display = 'none';
                 setSearchInputValue('');
                 setSearchInputState(false);
+                searchInput.focus();
             });
             searchClearIcon.style.fill = '#a6a7ab';
             searchLoadingIcon.style.fill = '#a6a7ab';
@@ -509,13 +514,15 @@ function Header() {
                     result.style.background = '#fff';
                 };
             });
-            searchSeeAllResults.style.background = '#fff';
-            searchSeeAllResults.onmouseenter = () => {
-                searchSeeAllResults.style.background = '#0000000b';
-            };
-            searchSeeAllResults.onmouseleave = () => {
+            if (searchSeeAllResults) {
                 searchSeeAllResults.style.background = '#fff';
-            };
+                searchSeeAllResults.onmouseenter = () => {
+                    searchSeeAllResults.style.background = '#0000000b';
+                };
+                searchSeeAllResults.onmouseleave = () => {
+                    searchSeeAllResults.style.background = '#fff';
+                };
+            }
 
             upload.style.background = '#fff';
             upload.style.color = '#0e0e0e';
@@ -648,6 +655,8 @@ function Header() {
             const searchResult = document.querySelectorAll('.Header_search-result-item__sCAht');
             const searchResultsHeader = document.querySelector('.Header_search-results-header__kk8u9');
             const searchResultsContents = document.querySelectorAll('.Header_search-result-li__4Sn9Z');
+            const searchSeeAllResults = document.querySelector('.Header_seeAllResults__WkZnh');
+            const searchSeeAllResultsText = document.querySelector('.Header_seeAllResultsText__pQz1J');
 
             const upload = document.querySelector('.Header_upload__EGBKW');
             const uploadIcon = document.querySelector('.Header_upload-icon__9m6OI');
@@ -748,6 +757,7 @@ function Header() {
                 searchClearBtn.style.display = 'none';
                 setSearchInputValue('');
                 setSearchInputState(false);
+                searchInput.focus();
             });
             searchClearIcon.style.fill = '#767676';
             searchLoadingIcon.style.fill = '#767676';
@@ -760,9 +770,11 @@ function Header() {
                 searchResultsContents.forEach((searchResultsContent) => {
                     searchResultsContent.style.color = 'rgb(232, 232, 232)';
                 });
+                if (searchSeeAllResultsText) {
+                    searchSeeAllResultsText.style.color = '#fff';
+                }
             }
             searchResult.forEach((result) => {
-                result.style.background = '';
                 result.onmouseenter = () => {
                     result.style.background = 'rgba(255, 255, 255, 0.03)';
                 };
@@ -770,6 +782,15 @@ function Header() {
                     result.style.background = 'rgb(37, 37, 37)';
                 };
             });
+            if (searchSeeAllResults) {
+                searchSeeAllResults.style.background = 'rgb(37, 37, 37)';
+                searchSeeAllResults.onmouseenter = () => {
+                    searchSeeAllResults.style.background = 'rgba(255, 255, 255, 0.03)';
+                };
+                searchSeeAllResults.onmouseleave = () => {
+                    searchSeeAllResults.style.background = 'rgb(37, 37, 37)';
+                };
+            }
 
             upload.style.background = '#252525';
             upload.style.color = '#e9e9e9';
@@ -886,6 +907,8 @@ function Header() {
             const searchResult = document.querySelectorAll('.Header_search-result-item__sCAht');
             const searchResultsHeader = document.querySelector('.Header_search-results-header__kk8u9');
             const searchResultsContents = document.querySelectorAll('.Header_search-result-li__4Sn9Z');
+            const searchSeeAllResults = document.querySelector('.Header_seeAllResults__WkZnh');
+            const searchSeeAllResultsText = document.querySelector('.Header_seeAllResultsText__pQz1J');
 
             const upload = document.querySelector('.Header_upload__EGBKW');
             const uploadIcon = document.querySelector('.Header_upload-icon__9m6OI');
@@ -985,6 +1008,7 @@ function Header() {
                 searchClearBtn.style.display = 'none';
                 setSearchInputValue('');
                 setSearchInputState(false);
+                searchInput.focus();
             });
             searchClearIcon.style.fill = '#a6a7ab';
             searchLoadingIcon.style.fill = '#a6a7ab';
@@ -997,9 +1021,11 @@ function Header() {
                 searchResultsContents.forEach((searchResultsContent) => {
                     searchResultsContent.style.color = '#000';
                 });
+                if (searchSeeAllResultsText) {
+                    searchSeeAllResultsText.style.color = '#000';
+                }
             }
             searchResult.forEach((result) => {
-                result.style.background = '#fff';
                 result.onmouseenter = () => {
                     result.style.background = '#0000000b';
                 };
@@ -1007,6 +1033,15 @@ function Header() {
                     result.style.background = '#fff';
                 };
             });
+            if (searchSeeAllResults) {
+                searchSeeAllResults.style.background = '#fff';
+                searchSeeAllResults.onmouseenter = () => {
+                    searchSeeAllResults.style.background = '#0000000b';
+                };
+                searchSeeAllResults.onmouseleave = () => {
+                    searchSeeAllResults.style.background = '#fff';
+                };
+            }
 
             upload.style.background = '#fff';
             upload.style.color = '#0e0e0e';
