@@ -61,8 +61,8 @@ function Header() {
         { content: 'Lionel Messi', state: 'trending', stateIcon: images.trendingIcon },
         { content: 'Concert Rap Việt Mùa 3', state: 'explore', stateIcon: images.upArrowIcon },
         { content: 'Liverpool vô địch c1', state: 'default', stateIcon: images.trendingIcon },
-        { content: 'Trend Đại Minh Tinh Phiên Bản Jisoo', state: 'default', stateIcon: images.dotIcon },
-        { content: 'Lisa Và Frederic Bị Bắt Gặp Ăn Tối Cùng Nhau', state: 'default', stateIcon: images.dotIcon },
+        { content: 'Team Whales Vô Địch CKTG 2023', state: 'default', stateIcon: images.dotIcon },
+        { content: 'Obito Phát Hành Album Mới', state: 'default', stateIcon: images.dotIcon },
         { content: 'Những Story Về Tình Yêu', state: 'default', stateIcon: images.dotIcon },
         { content: 'Alan Walker Về Việt Nam Biểu Diễn', state: 'default', stateIcon: images.dotIcon },
         { content: '2 Cô Giáo Bị Vùi Lấp Trên Đường Đi Dạy Về', state: 'default', stateIcon: images.dotIcon },
@@ -84,10 +84,10 @@ function Header() {
             content: 'Liverpool vô địch c1',
         },
         {
-            content: 'Trend Đại Minh Tinh Phiên Bản Jisoo',
+            content: 'Team Whales Vô Địch CKTG 2023',
         },
         {
-            content: 'Lisa Và Frederic Bị Bắt Gặp Ăn Tối Cùng Nhau',
+            content: 'Obito Phát Hành Album Mới',
         },
         {
             content: 'Những Story Về Tình Yêu',
@@ -256,6 +256,7 @@ function Header() {
                 }
             }
             searchResult.forEach((result) => {
+                result.style.background = 'rgb(37, 37, 37)';
                 result.onmouseenter = () => {
                     result.style.background = 'rgba(255, 255, 255, 0.03)';
                 };
@@ -322,6 +323,7 @@ function Header() {
             languageModalHeaderParagraph.style.color = '#fff';
             languageModalHeaderProps.forEach((li) => {
                 li.style.color = '#fff';
+                li.style.background = '#252525';
                 li.onmouseenter = () => {
                     li.style.background = '#2f2f2f';
                 };
@@ -507,6 +509,7 @@ function Header() {
                 }
             }
             searchResult.forEach((result) => {
+                result.style.background = '#fff';
                 result.onmouseenter = () => {
                     result.style.background = '#0000000b';
                 };
@@ -573,6 +576,7 @@ function Header() {
             languageModalHeaderParagraph.style.color = '#000';
             languageModalHeaderProps.forEach((li) => {
                 li.style.color = '#000';
+                li.style.background = '#fff';
                 li.onmouseenter = () => {
                     li.style.background = 'rgba(22 , 24 , 35 ,0.06)';
                 };
@@ -775,6 +779,7 @@ function Header() {
                 }
             }
             searchResult.forEach((result) => {
+                result.style.background = 'rgb(37, 37, 37)';
                 result.onmouseenter = () => {
                     result.style.background = 'rgba(255, 255, 255, 0.03)';
                 };
@@ -841,6 +846,7 @@ function Header() {
             languageModalHeaderParagraph.style.color = '#fff';
             languageModalHeaderProps.forEach((li) => {
                 li.style.color = '#fff';
+                li.style.background = '#252525';
                 li.onmouseenter = () => {
                     li.style.background = '#2f2f2f';
                 };
@@ -1026,6 +1032,7 @@ function Header() {
                 }
             }
             searchResult.forEach((result) => {
+                result.style.background = '#fff';
                 result.onmouseenter = () => {
                     result.style.background = '#0000000b';
                 };
@@ -1092,6 +1099,7 @@ function Header() {
             languageModalHeaderParagraph.style.color = '#000';
             languageModalHeaderProps.forEach((li) => {
                 li.style.color = '#000';
+                li.style.background = '#fff';
                 li.onmouseenter = () => {
                     li.style.background = 'rgba(22 , 24 , 35 ,0.06)';
                 };
