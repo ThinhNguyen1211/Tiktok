@@ -10,17 +10,49 @@ const handleCloseMenuSettings = () => {
     languageModal.style.display = 'none';
 };
 
+const languageList = [
+    { title: 'Tiếng Việt (Việt Nam)', selected: true },
+    { title: 'العربية', selected: false },
+    { title: 'বাঙ্গালি (ভারত)', selected: false },
+    { title: 'Cebuano (Pilipinas)', selected: false },
+    { title: 'Čeština (Česká republika)', selected: false },
+    { title: 'Deutsch', selected: false },
+    { title: 'Ελληνικά (Ελλάδα)', selected: false },
+    { title: 'English', selected: false },
+    { title: 'Español', selected: false },
+    { title: 'Suomi (Suomi)', selected: false },
+    { title: 'Français', selected: false },
+    { title: 'עברית (ישראל)', selected: false },
+    { title: 'हिंदी', selected: false },
+    { title: 'Magyar (Magyarország)', selected: false },
+    { title: 'Bahasa Indonesia (Indonesia)', selected: false },
+    { title: 'Italiano (Italia)', selected: false },
+    { title: '日本語（日本', selected: false },
+    { title: 'Basa Jawa (Indonesia)', selected: false },
+    { title: 'ខ្មែរ (កម្ពុជា)', selected: false },
+    { title: '한국어 (대한민국)', selected: false },
+    { title: 'Bahasa Melayu (Malaysia)', selected: false },
+    { title: 'မြန်မာ (မြန်မာ)', selected: false },
+    { title: 'Nederlands (Nederland)', selected: false },
+    { title: 'Polski (Polska)', selected: false },
+    { title: 'Português (Brasil)', selected: false },
+    { title: 'Română (Romania)', selected: false },
+    { title: 'Русский (Россия)', selected: false },
+    { title: 'Svenska (Sverige)', selected: false },
+    { title: 'ไทย (ไทย)', selected: false },
+    { title: 'Türkçe (Türkiye)', selected: false },
+    { title: 'Українська (Україна)', selected: false },
+    { title: 'اردو', selected: false },
+    { title: '简体中文', selected: false },
+    { title: '繁體中文', selected: false },
+];
+
 function LanguageModal() {
     return (
         <div tabIndex="-1" className={cx('wrapper')}>
             <div className={cx('language-container')}>
                 <div className={cx('language-header')}>
-                    <i
-                        tabIndex="0"
-                        aria-label="Quay lại màn hình trước"
-                        role="button"
-                        onClick={() => handleCloseMenuSettings()}
-                    >
+                    <i tabIndex="0" onClick={() => handleCloseMenuSettings()}>
                         <img
                             src={images.closeIcon}
                             alt="close icon"
@@ -30,112 +62,14 @@ function LanguageModal() {
                     </i>
                     <p className={cx('language-header-p')}>Ngôn ngữ</p>
                 </div>
-                <ul role="listbox" aria-labelledby="language-selection-menu-header" className={cx('language-props')}>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Tiếng Việt (Việt Nam)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        العربية
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        বাঙ্গালি (ভারত)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Cebuano (Pilipinas)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Čeština (Česká republika)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Deutsch
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Ελληνικά (Ελλάδα)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        English
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Español
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Suomi (Suomi)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Filipino (Pilipinas)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Français
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        עברית (ישראל)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        हिंदी
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Magyar (Magyarország)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Bahasa Indonesia (Indonesia)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Italiano (Italia)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        日本語（日本）
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Basa Jawa (Indonesia)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        ខ្មែរ (កម្ពុជា)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        한국어 (대한민국)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Bahasa Melayu (Malaysia)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        မြန်မာ (မြန်မာ)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Nederlands (Nederland)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Polski (Polska)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Português (Brasil)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Română (Romania)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Русский (Россия)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Svenska (Sverige)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        ไทย (ไทย)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Türkçe (Türkiye)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        Українська (Україна)
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        اردو
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        简体中文
-                    </li>
-                    <li tabIndex="0" role="option" aria-selected>
-                        繁體中文
-                    </li>
+                <ul className={cx('language-props')}>
+                    {languageList.map((language) => {
+                        return (
+                            <li tabIndex="0" role="option" aria-selected>
+                                {language.title}
+                            </li>
+                        );
+                    })}
                 </ul>
             </div>
         </div>

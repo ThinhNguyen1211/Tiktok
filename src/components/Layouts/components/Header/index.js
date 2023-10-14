@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react';
 
 import images from '~/assets/images';
@@ -43,6 +43,7 @@ const handleShowShortcutModal = () => {
 };
 
 //TODO: sửa thêm cơ chế khi scroll xuống quá mức của sidebar hoặc language thì nó sẽ scroll luôn content (lỗi do đặt chung content và sidebar chung 1 container)
+//TODO: search GPT cách làm authen đăng nhập, tạo giao diện mới khi đã đăng nhập
 
 function Header() {
     const [visible, setVisible] = useState(false);
@@ -61,8 +62,8 @@ function Header() {
         { content: 'Lionel Messi', state: 'trending', stateIcon: images.trendingIcon },
         { content: 'Concert Rap Việt Mùa 3', state: 'explore', stateIcon: images.upArrowIcon },
         { content: 'Liverpool vô địch c1', state: 'default', stateIcon: images.trendingIcon },
-        { content: 'Team Whales Vô Địch CKTG 2023', state: 'default', stateIcon: images.dotIcon },
-        { content: 'Obito Phát Hành Album Mới', state: 'default', stateIcon: images.dotIcon },
+        { content: 'Team Whales vô địch CKTG 2023', state: 'default', stateIcon: images.dotIcon },
+        { content: 'Obito phát hành album mới', state: 'default', stateIcon: images.dotIcon },
         { content: 'Những Story Về Tình Yêu', state: 'default', stateIcon: images.dotIcon },
         { content: 'Alan Walker Về Việt Nam Biểu Diễn', state: 'default', stateIcon: images.dotIcon },
         { content: '2 Cô Giáo Bị Vùi Lấp Trên Đường Đi Dạy Về', state: 'default', stateIcon: images.dotIcon },
@@ -84,10 +85,10 @@ function Header() {
             content: 'Liverpool vô địch c1',
         },
         {
-            content: 'Team Whales Vô Địch CKTG 2023',
+            content: 'Team Whales vô địch CKTG 2023',
         },
         {
-            content: 'Obito Phát Hành Album Mới',
+            content: 'Obito phát hành album mới',
         },
         {
             content: 'Những Story Về Tình Yêu',
