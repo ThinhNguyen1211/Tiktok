@@ -1,0 +1,42 @@
+.account-item {
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 8px 16px;
+
+    span {
+        overflow: hidden;
+        margin-right: 12px;
+        color: rgb(255, 255, 255);
+        border-radius: 50%;
+        background-color: rgba(136, 136, 136, 0.5);
+    }
+
+    .account-item-username {
+        font-size: 16px;
+        line-height: 21px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        img {
+            margin-left: 4px;
+        }
+    }
+
+    .account-item-nickname {
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(22, 24, 35, 0.5);
+        font-weight: 400;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        background: #0000000b;
+    }
+}

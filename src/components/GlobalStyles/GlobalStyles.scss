@@ -1,0 +1,80 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+    --primary-color: #fe2c55 !important;
+    --black-color: #161823;
+
+    // default layout
+    --default-layout-header-height: 60px;
+    --default-layout-width: 1150px;
+    --search-width: 38.893vw;
+    // --search-width: 500px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'IBM Plex Sans', 'Poppins';
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+::-webkit-scrollbar {
+    width: 0.000001em;
+}
+
+/* Màu nền của thanh cuộn */
+// ::-webkit-scrollbar-track {
+//     background-color: transparent;
+// }
+
+/* Màu của thanh cuộn */
+// ::-webkit-scrollbar-thumb {
+//     background-color: transparent;
+// }
+
+/* Khi di chuột qua thanh cuộn */
+// ::-webkit-scrollbar-thumb:hover {
+//     background-color: transparent;
+// }
+
+.spanSpliter {
+    width: 1px;
+    height: 28px;
+    margin: -3px 0;
+    background: rgba(22, 24, 35, 0.12);
+}
+
+.active {
+    a {
+        color: var(--primary-color) !important;
+    }
+}
+
+.dark-mode-background {
+    background: #121212;
+}
+
+button,
+input,
+[tabIndex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
